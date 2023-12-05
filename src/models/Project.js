@@ -11,3 +11,6 @@ const projectSchema = new Schema({
     required: true,
   },
 });
+
+const Project = model("project", projectSchema);
+export default Project;
