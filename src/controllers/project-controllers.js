@@ -9,9 +9,9 @@ export const postTask = async (req, res) => {
   try {
     const { title, succeed } = req.body;
     const newTodo = new Project({ title, succeed });
-    await newTodo.save();
-    res.status(201).json(newTodo);
+    const savedTodo = await newTodo.save();
+    return res.status(201).json(savedTodo);
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json({ error: "internal server error" });
   }
 };
