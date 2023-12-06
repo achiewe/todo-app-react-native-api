@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
-import { getTask } from "./controllers/project-controllers.js";
+import { getTask, postTask } from "./controllers/project-controllers.js";
 
 dotenv.config();
 
@@ -19,5 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/tasks", getTask);
+app.post("/postTask", postTask);
 
 app.listen(3001);
