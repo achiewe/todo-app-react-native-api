@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
-import cors from "cors";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 import { getTask, postTask } from "./controllers/project-controllers.js";
+import cors from "cors";
 
 dotenv.config();
 
