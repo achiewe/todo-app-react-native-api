@@ -2,7 +2,11 @@ import express from "express";
 import bodyParser from "body-parser";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
-import { getTask, postTask } from "./controllers/project-controllers.js";
+import {
+  getTask,
+  postTask,
+  putProperty,
+} from "./controllers/project-controllers.js";
 import cors from "cors";
 
 dotenv.config();
@@ -20,5 +24,6 @@ app.get("/", (req, res) => {
 
 app.get("/tasks", getTask);
 app.post("/postTask", postTask);
+app.put("/tasks/:id", putProperty);
 
 app.listen(3001);

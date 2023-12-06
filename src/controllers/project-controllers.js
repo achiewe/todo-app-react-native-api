@@ -15,3 +15,21 @@ export const postTask = async (req, res) => {
     return res.status(500).json({ error: "internal server error" });
   }
 };
+
+export const putProperty = async (req, res) => {
+  try {
+    const itemId = req.params.id;
+    const { succeed } = req.body;
+    const updateItem = await Project.findByIdAndUpdate(
+      itemId,
+      { succeed },
+      { new: true }
+    );
+    if (!updateItem) {
+      return res.status(404).json({ message: "item not found" });
+    }
+    res.status(200).json(updatedTodo);
+  } catch (error) {
+    res.status(500).json({ message: "an error occurred" });
+  }
+};
