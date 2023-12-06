@@ -12,5 +12,5 @@ const projectSchema = new Schema({
   },
 });
 
-const Project = model("projects", projectSchema);
+const Project = model("project", projectSchema);
 export default Project;
