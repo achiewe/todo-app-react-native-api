@@ -33,3 +33,16 @@ export const putProperty = async (req, res) => {
     res.status(500).json({ message: "an error occurred" });
   }
 };
+
+export const deleteTask = async (req, res) => {
+  try {
+    const itemId = req.params.id;
+    const deleteItem = await Project.findOneAndDelete({ _id: itemId });
+    if (!deleteItem) {
+      return res.status(404).json("task not found");
+    }
+    res.status(200).json("delete successfully");
+  } catch (error) {
+    console.log(error);
+  }
+};
