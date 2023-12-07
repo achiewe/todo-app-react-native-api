@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 import {
+  deleteTask,
   getTask,
   postTask,
   putProperty,
@@ -25,5 +26,6 @@ app.get("/", (req, res) => {
 app.get("/tasks", getTask);
 app.post("/postTask", postTask);
 app.put("/tasks/:id", putProperty);
+app.delete("/tasks/:id", deleteTask);
 
 app.listen(3001);
