@@ -20,15 +20,15 @@ export const putProperty = async (req, res) => {
   try {
     const itemId = req.params.id;
     const { succeed } = req.body;
-    const updateItem = await Project.findByIdAndUpdate(
+    const updatedItem = await Project.findByIdAndUpdate(
       itemId,
       { succeed },
       { new: true }
     );
-    if (!updateItem) {
+    if (!updatedItem) {
       return res.status(404).json({ message: "item not found" });
     }
-    res.status(200).json(updatedTodo);
+    res.status(200).json(updatedItem);
   } catch (error) {
     res.status(500).json({ message: "an error occurred" });
   }
