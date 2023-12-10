@@ -7,6 +7,7 @@ import {
   getTask,
   postTask,
   putProperty,
+  updateTitle,
 } from "./controllers/project-controllers.js";
 import cors from "cors";
 
@@ -27,5 +28,6 @@ app.get("/tasks", getTask);
 app.post("/postTask", postTask);
 app.put("/tasks/:id", putProperty);
 app.delete("/tasks/:id", deleteTask);
+app.put("/tasks/title/:id", updateTitle);
 
 app.listen(3001);
