@@ -38,6 +38,7 @@ export const updateTitle = async (req, res) => {
   try {
     const itemId = req.params.id;
     const { title } = req.body;
+
     const updatedItem = await Project.findByIdAndUpdate(
       itemId,
       { title },
