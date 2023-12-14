@@ -57,6 +57,7 @@ export const updateTitle = async (req, res) => {
   }
 };
 
+// delete request for delete task from the database and in the front end side
 export const deleteTask = async (req, res) => {
   try {
     const itemId = req.params.id;
