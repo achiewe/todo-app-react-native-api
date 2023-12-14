@@ -18,6 +18,7 @@ export const postTask = async (req, res) => {
   }
 };
 
+// put request to change the property succeed in the database
 export const putProperty = async (req, res) => {
   try {
     const itemId = req.params.id;
