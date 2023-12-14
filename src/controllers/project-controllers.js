@@ -37,6 +37,7 @@ export const putProperty = async (req, res) => {
   }
 };
 
+// put request for change the property title in the database
 export const updateTitle = async (req, res) => {
   try {
     const itemId = req.params.id;
