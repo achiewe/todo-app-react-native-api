@@ -1,5 +1,6 @@
 import Project from "../models/Project.js";
 
+// get request for take data from the database
 export const getTask = async (req, res) => {
   const data = await Project.find();
   return res.status(200).json(data);
