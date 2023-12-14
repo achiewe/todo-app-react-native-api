@@ -2,6 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
+
+// functions
 import {
   deleteTask,
   getTask,
