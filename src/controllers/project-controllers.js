@@ -6,6 +6,7 @@ export const getTask = async (req, res) => {
   return res.status(200).json(data);
 };
 
+// post task for add info from front to database
 export const postTask = async (req, res) => {
   try {
     const { title, succeed } = req.body;
