@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
   return res.status(200).json({ message: "app works" });
 });
 
+// which http request should happend this functions
 app.get("/tasks", getTask);
 app.post("/postTask", postTask);
 app.put("/tasks/:id", putProperty);
